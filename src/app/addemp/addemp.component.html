@@ -1,0 +1,38 @@
+<h3>Add Employee</h3>
+
+<form #myform=ngForm (ngSubmit)="myform.valid &&  addEmployee(myform)">
+
+<div class="form-group">
+    <label>Employee name</label>
+
+    <input type="text" name="name" required minlength="2" ngModel #testnameCtrl=ngModel class="form-control" >    
+</div>
+
+<div *ngIf="testnameCtrl.errors!=null && testnameCtrl.errors.required" class="error">
+ Employee name is required
+</div>
+
+
+<div *ngIf="testnameCtrl.errors!=null && testnameCtrl.errors.minlength" class="error">
+    minlength is 2
+   </div>
+
+   <div class="form-group">
+    <label>Employee Age</label>
+    <input type="number" name="age"   ngModel class="form-control">
+  </div>
+
+
+   <input type="submit" value="Submit" class="btn btn-primary">    
+</form>
+<br>
+
+<div *ngIf="employee!==undefined">
+ <h3>Added Employee</h3>  
+   with  id {{employee.id}}
+   <br>
+    Employee name is            {{employee.name | uppercase}}
+    <br>
+     Employee Age is                       {{employee.age }}
+</div>
+<br>

@@ -1,0 +1,16 @@
+<h3>Find employee by id</h3>
+<form #idform=ngForm (ngSubmit)=findemployee(idform) >
+
+  <div class="form-group">
+  <label>Employee Id</label>
+  <input type="number" name="employeeid"   ngModel class="form-control">
+</div>
+  <input type="submit" value="Search" class="btn btn-success">
+</form>
+<br>
+
+<div *ngIf="employee!==undefined">
+  Name is {{employee.name | uppercase }}
+  <br>
+  Age is {{employee.age }}
+</div>

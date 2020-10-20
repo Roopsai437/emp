@@ -1,0 +1,28 @@
+<h3>Listall</h3>
+
+
+<table border="5">
+
+<tr>
+  <th>Id</th>
+  <th>Name</th> 
+  <th>Age</th> 
+</tr>  
+<tr *ngFor="let employee of emploies;let i=index" >
+ 
+  <td>
+    {{employee.id}}
+  </td>
+
+  <td>
+ {{employee.name }} 
+</td>
+
+
+  <td>
+    {{employee.age}}
+  
+  </td>  
+
+</tr>
+</table>
